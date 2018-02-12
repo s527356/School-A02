@@ -12,8 +12,16 @@
 
         <link rel="stylesheet" href="css/normalize.min.css">
         <link rel="stylesheet" href="css/main.css">
-
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="js/main.js"></script>
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+        <script>$(document).ready(function(){
+                $('#calculate').click(function(){
+                    $(this).hide()
+                    calculate()
+                })
+            })</script>
     </head>
     <body>
         <!--[if lt IE 8]>
@@ -40,15 +48,16 @@
                 <p>Based on current estimates, find out how many waking hours you have left in an average life!</p>
                 <form>
                     Sex at birth:<br>
-                    <input type="radio" name="sex" value="male" checked> Male<br>
-                    <input type="radio" name="sex" value="female"> Female<br><br>
+                    <input id="male" type="radio" name="sex" value="male"> Male<br>
+                    <input id="female" type="radio" name="sex" value="female"> Female<br><br>
                     Current age:<br> 
-                    <input type="text" name="age"><br><br>
+                    <input id="age" type="text" name="age"><br><br>
                     Hours spent sleeping every night (average):<br>
-                    <input type="text" name="sleep">
+                    <input id="sleep" type="text" name="sleep"><br><br>
                     
                 </form>
-                
+                <button id="calculate">Calculate</button>
+                <div id="answer"></div>
 
             </div> <!-- #main -->
         </div> <!-- #main-container -->
